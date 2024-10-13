@@ -1,0 +1,8 @@
+#using tikinter module
+from tkinter import*
+screen = Tk()
+#setting screen size
+screen.geometry("1000x800")
+B = Button(text = "click me",bd = "5", background = "purple")
+B.pack(side = "top") 
+screen.mainloop()
