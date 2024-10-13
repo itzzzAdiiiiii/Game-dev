@@ -19,14 +19,14 @@ class non_recycleable(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
         self.image = pygame.image.load("trash bag.png").convert_alpha()
-        self.image = pygame.transform.scale(self.image,(35,50))
+        self.image = pygame.transform.scale(self.image,(45,50))
         self.rect = self.image.get_rect()
 #trash can
 class trash_can(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
         self.image = pygame.image.load("trash can.png").convert_alpha()
-        self.image = pygame.transform.scale(self.image,(100,150))
+        self.image = pygame.transform.scale(self.image,(80,100))
         self.rect = self.image.get_rect()
 #list of imagesfor the recycle class
 recycles = ["coffee cup.png", "crate.png", "soda can.png", "water bottle.png"]
@@ -65,7 +65,9 @@ while run:
         else:
             text = f.render("Game over",(20,50),"blue")
     else:
-            
+        backg = pygame.image.load("bg.jpg")
+        backg  = pygame.transform.scale(backg,(1000,800))
+        screen.blit(backg,(0,0))
         keys = pygame.key.get_pressed()
         if keys[pygame.K_UP]:#up
             if trashcan.rect.y>0:
@@ -85,6 +87,8 @@ while run:
         for i in item_hit:
             score = score+1
             text = f.render("score = "+str(score),True,"Blue")
+        for ii in trash_hit:
+            score = score-1
         screen.blit(text,(20,50))
         all.draw(screen)
     pygame.display.update()
