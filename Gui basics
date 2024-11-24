@@ -6,7 +6,9 @@ screen.geometry("1000x800")
 #labels
 username = Label(screen,text= "username").place(x = 415,y = 200)
 #entry
-entry1 = Entry(screen,width = 37).place(x = 435,y = 200)
-B = Button(text = "click me",bd = "5", background = "purple",command=screen.destroy)
-B.pack(side = "top") 
+entry1 = Entry(screen,width = 37).place(x = 475,y = 200)
+B = Button(text = "click me",bd = "5", background = "purple",fg="white",command=screen.destroy).place(x = 475,y = 315)
+password = Label(screen,text= "password").place(x = 415,y = 250)
+#entry
+entry2 = Entry(screen,width = 37).place(x = 475,y = 250)
 screen.mainloop()
